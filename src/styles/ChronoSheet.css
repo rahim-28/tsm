@@ -1,0 +1,191 @@
+/* ===========================
+   Chrono Sheet Form & Table
+=========================== */
+
+/* Container styles */
+.form-container, .table-container {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  max-width: 900px; /* increased width */
+  margin: 0 auto 20px auto;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2, .table-container h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #2f3640;
+}
+
+/* Form fields */
+form label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #2f3640;
+  display: block;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #dcdde1;
+  font-size: 14px;
+}
+
+form input:focus, form select:focus {
+  outline: none;
+  border-color: #00a8ff;
+}
+
+/* Form buttons */
+.btn-submit {
+  background-color: #4cd137;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.btn-submit:hover {
+  background-color: #44bd32;
+}
+
+.btn-cancel {
+  background-color: #718093;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ===========================
+   Chrono Sheet Table
+=========================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+thead {
+  background-color: lightcoral;
+  color: white;
+}
+
+thead th {
+  padding: 12px;
+  text-align: left;
+}
+
+tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Action buttons */
+.action-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.action-btn {
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.view-btn { background-color: #3b82f6; color: white; }
+.edit-btn { background-color: #facc15; color: black; }
+.delete-btn { background-color: #ef4444; color: white; }
+
+/* Top Buttons */
+.btn-small {
+  background-color: #4cd137;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+.btn-small:hover {
+  background-color: #44bd32;
+}
+
+.btn-small.logout {
+  background-color: #e84118;
+}
+
+.btn-small.logout:hover {
+  background-color: #c23616;
+}
+
+/* View Modal */
+.view-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 500px; /* increased width */
+  max-width: 95%;
+}
+
+.view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.view-header h3 {
+  margin: 0;
+}
+
+.close-btn {
+  background-color: #e84118;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.view-content p {
+  margin: 8px 0;
+}
+
+/* Status colors */
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.status-badge.in-progress { background-color: #f39c12; color: white; }
+.status-badge.completed { background-color: #44bd32; color: white; }
+.status-badge.not-completed { background-color: #e84118; color: white; }

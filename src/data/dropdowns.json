@@ -1,0 +1,5 @@
+{
+    "departments": ["HR", "Finance", "IT", "Sales"],
+    "roles": ["Admin", "Manager", "Developer","Employee"]
+  }
+  

@@ -1,0 +1,213 @@
+/* Task Allocation Form*/
+
+.task-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+  }
+  
+  .task-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  
+  .form-group select,
+  .form-group input,
+  .form-group textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+    min-height: 60px;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .button-group button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .button-group button.save {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .button-group button.cancel {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+
+  /* Task Allocation Table */
+
+  .task-details {
+    width: 90%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .add-task-btn {
+    padding: 6px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .add-task-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .task-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .task-table th,
+  .task-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .task-table th {
+    background-color:lightcoral;
+  }
+  
+  .task-actions button {
+    margin-right: 5px;
+    padding: 4px 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  
+  .task-actions button.edit {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .task-actions button.delete {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+ /* ===========================
+   Task Details Page
+=========================== */
+.task-details {
+  padding: 20px;
+  background: #f9fafb;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.task-header h2 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #111827;
+}
+
+.add-task-btn {
+  background: green;
+  color: #fff;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.add-task-btn:hover {
+  background: green;
+}
+
+
+/* ===========================
+   Action Buttons
+=========================== */
+.task-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.action-btn {
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.action-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Color buttons */
+.view-btn {
+  background: #3b82f6; /* Blue */
+  color: #fff;
+}
+.view-btn:hover {
+  background: #2563eb;
+}
+
+.edit-btn {
+  background: #facc15; /* Yellow */
+  color: #000;
+}
+.edit-btn:hover {
+  background: #eab308;
+}
+
+.delete-btn {
+  background: #ef4444; /* Red */
+  color: #fff;
+}
+.delete-btn:hover {
+  background: #dc2626;
+}

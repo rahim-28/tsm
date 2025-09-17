@@ -1,0 +1,25 @@
+[
+    {
+      "employeeId": 1,
+      "employeeCode": "EMP001",
+      "employeeName": "John Doe",
+      "userName": "johnd",
+      "userId": "U001",
+      "department": "IT",
+      "role": "Developer",
+      "emailId": "john@example.com",
+      "mobileNumber": "1234567890"
+    },
+    {
+      "employeeId": 2,
+      "employeeCode": "EMP002",
+      "employeeName": "Jane Smith",
+      "userName": "janes",
+      "userId": "U002",
+      "department": "HR",
+      "role": "Manager",
+      "emailId": "jane@example.com",
+      "mobileNumber": "9876543210"
+    }
+  ]
+  

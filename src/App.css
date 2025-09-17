@@ -1,0 +1,649 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 40px;
+  background-color: lightcoral;
+  color: white;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebar-menu li {
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.icon-link {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.icon-link:hover {
+  background-color: black;
+}
+
+/* Submenu side panel */
+.submenu-panel {
+  width: 200px;
+  background-color: white;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.submenu-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.submenu-panel li {
+  margin-bottom: 10px;
+}
+
+.submenu-panel li a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.submenu-panel li a:hover {
+  background-color: lightcoral;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 30px;
+  background-color: #f9fafb;
+}
+
+.main-content h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.sidebar .icon-link svg {
+  color: white; /* force icon color */
+}
+form {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #2f3640;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #2f3640;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #dcdde1;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #00a8ff;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+form button[type="submit"] {
+  background-color: #4cd137;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+form button[type="submit"]:hover {
+  background-color: #44bd32;
+}
+
+.back-btn {
+  background-color: #718093;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.status-text.paid {
+  color: #44bd32;
+  font-weight: bold;
+}
+
+.status-text.not-paid {
+  color: #e84118;
+  font-weight: bold;
+}
+
+.status-text.pending {
+  color: #f39c12;
+  font-weight: bold;
+}
+/* ===========================
+   Client Table & Modal
+=========================== */
+.table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.table-header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.add-client {
+  background: #4cd137;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+thead {
+  background: lightcoral;
+  color: white;
+}
+
+thead th {
+  padding: 10px;
+  text-align: left;
+}
+
+tbody td {
+  padding: 8px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.action-btn {
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.view-btn {
+  background: #3b82f6;
+  color: #fff;
+}
+.edit-btn {
+  background: #facc15;
+  color: #000;
+}
+.delete-btn {
+  background: #ef4444;
+  color: #fff;
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+.status-badge.paid {
+  background: #44bd32;
+  color: white;
+}
+.status-badge.pending {
+  background: #f1c40f;
+  color: black;
+}
+.status-badge.not-paid {
+  background: #e84118;
+  color: white;
+}
+
+/* View Modal */
+.view-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.view-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 420px;
+}
+/* ===== Client Module Scoped Styles ===== */
+.client-module {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+/* ===== Form Inputs ===== */
+.client-module .form-input {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* ===== Form Actions ===== */
+.client-module .form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* ===== Buttons ===== */
+.client-module .save-btn,
+.client-module .back-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  transition: 0.2s;
+}
+
+.client-module .save-btn { background-color: #2ecc71; }
+.client-module .save-btn:hover { background-color: #27ae60; }
+
+.client-module .back-btn { background-color: #bdc3c7; }
+.client-module .back-btn:hover { background-color: #95a5a6; }
+
+/* ===== Status Badge ===== */
+.client-module .status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.client-module .status-badge.not-paid { background-color: #e74c3c; }
+.client-module .status-badge.pending { background-color: #f1c40f; }
+.client-module .status-badge.paid { background-color: #2ecc71; }
+/* ===== Client Module Scoped Styles ===== */
+.client-module {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+/* ===== Table Header ===== */
+.client-module .table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.client-module .add-client {
+  padding: 6px 12px;
+  border: none;
+  background-color: #2ecc71;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.client-module .add-client:hover { background-color: #27ae60; }
+
+/* ===== Action Buttons ===== */
+.client-module .action-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.client-module .action-btn {
+  border: none;
+  padding: 5px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  transition: 0.2s;
+}
+
+.client-module .view-btn { background-color: #3498db; }
+.client-module .edit-btn { background-color: #f1c40f; }
+.client-module .delete-btn { background-color: #e74c3c; }
+
+/* ===== Status Badge ===== */
+.client-module .status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: white;
+}
+
+.client-module .status-badge.not-paid { background-color: #e74c3c; }
+.client-module .status-badge.pending { background-color: #f1c40f; }
+.client-module .status-badge.paid { background-color: #2ecc71; }
+
+/* ===== View Modal ===== */
+.client-module .view-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.client-module .view-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.client-module .view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.client-module .close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #e74c3c;
+}
+
+/* ===== Form buttons (for ClientForm) ===== */
+.client-module .back-btn {
+  padding: 6px 12px;
+  background-color: #bdc3c7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: 0.2s;
+}
+.client-module .back-btn:hover { background-color: #95a5a6; }
+
+.client-module .save-btn {
+  padding: 6px 12px;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.client-module .save-btn:hover { background-color: #27ae60; }
+/* Wrap the client details section */
+.client-container {
+  max-width: 1200px;   /* keeps table at a nice width */
+  margin: 40px auto;   /* centers the whole section */
+  padding: 20px;
+}
+
+/* Header with title + button aligned */
+.client-header {
+  display: flex;
+  justify-content: space-between; /* pushes title left, button right */
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Add Client button */
+.client-header button {
+  background-color: #28a745; /* green */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.client-header button:hover {
+  background-color: #218838; /* darker green on hover */
+}
+
+/* Table box */
+.client-table-wrapper {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+/* Whole section centered */
+.client-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Title left + button right */
+.client-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Add Client button */
+.client-header button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.client-header button:hover {
+  background-color: #218838;
+}
+
+/* Table box */
+.client-table-wrapper {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Action buttons */
+.btn {
+  border: none;
+  padding: 6px;
+  margin-right: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn-view {
+  background: #17a2b8;
+  color: white;
+}
+.btn-edit {
+  background: #ffc107;
+  color: white;
+}
+.btn-delete {
+  background: #dc3545;
+  color: white;
+}
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* Status labels */
+.status {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+.status.paid {
+  background-color: #28a745;
+  color: white;
+}
+.status.pending {
+  background-color: #ffc107;
+  color: black;
+}
+.view-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.view-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 400px;
+  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* Common button style */
+.btn {
+  padding: 6px 12px;
+  margin: 2px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: 0.2s ease-in-out;
+}
+
+/* Specific colors */
+.add-btn {
+  background: #28a745; /* green */
+  color: white;
+}
+.add-btn:hover {
+  background: #218838;
+}
+
+.view-btn {
+  background: #007bff; /* blue */
+  color: white;
+}
+.view-btn:hover {
+  background: #0056b3;
+}
+
+.edit-btn {
+  background: #ffc107; /* yellow */
+  color: black;
+}
+.edit-btn:hover {
+  background: #e0a800;
+}
+
+.delete-btn {
+  background: #dc3545; /* red */
+  color: white;
+}
+.delete-btn:hover {
+  background: #b52a37;
+}
